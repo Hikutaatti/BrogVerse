@@ -66,6 +66,12 @@ body {
 .topnav a.active {
   background-color: #484241;
   color: orangered;
+} 
+
+/* Optional: Styling for the active image */
+.active-img {
+  border: 2px solid orangered;
+  /* Or you could adjust the size or any other styling here */
 }
 
 /* Right-aligned nav items */

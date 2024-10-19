@@ -28,24 +28,21 @@ fetch('footer.html') //This line has fetch implemented, used to load the footer 
 })
 .catch(error => console.error('Error loading footer:', error));
 
+// Get the current page path
 const path = window.location.pathname;
-
 // Clear any active classes
 document.querySelectorAll('.topnav a').forEach(link => {
-    link.classList.remove('active');
+  link.classList.remove('active');
 });
 
-// Check if the current page is the home page or if path is empty
-if (path === '/' || path.includes('index') || path === '') {
-    document.getElementById('home-link').classList.add('active');
-} else if (path.includes('news')) {
+// If the current page is the home page, root ("/"), or path is empty, highlight the home link
+if (path === '/' || path === '' || path.includes('index.html')) {
+    document.getElementById('home-link').classList.add('active');  // Add active to home link
+    document.getElementById('home-link-img').classList.add('active-img');  // Optional: Add active to image
+} else if (path.includes('news.html')) {
     document.getElementById('news-link').classList.add('active');
-} else if (path.includes('review')) {
+} else if (path.includes('review.html')) {
     document.getElementById('review-link').classList.add('active');
-} else if (path.includes('about')) {
+} else if (path.includes('about.html')) {
     document.getElementById('about-link').classList.add('active');
-}
-//else highlight the home link
-else {
-    document.getElementById('home-link').classList.add('active');
 }

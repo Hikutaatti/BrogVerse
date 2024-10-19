@@ -36,12 +36,12 @@ document.querySelectorAll('.topnav a').forEach(link => {
 });
 
 // Check if the current page is the home page or if path is empty
-if (path === '/' || path.includes('index.html') || path === '') {
+if (path === '/' || path.includes('index') || path === '') {
     document.getElementById('home-link').classList.add('active');
-} else if (path.includes('news.html')) {
+} else if (path.includes('news')) {
     document.getElementById('news-link').classList.add('active');
-} else if (path.includes('review.html')) {
+} else if (path.includes('review')) {
     document.getElementById('review-link').classList.add('active');
-} else if (path.includes('about.html')) {
+} else if (path.includes('about')) {
     document.getElementById('about-link').classList.add('active');
 }

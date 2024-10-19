@@ -36,7 +36,7 @@ document.querySelectorAll('.topnav a').forEach(link => {
 });
 
 // If the current page is the home page, root ("/"), or path is empty, highlight the home link
-if (path === '/' || path === '' || path.includes('index')) {
+if (path === '') {
     document.getElementById('home-link').classList.add('active');  // Add active to home link
     document.getElementById('home-link-img').classList.add('active-img');  // Optional: Add active to image
 } else if (path.includes('news.html')) {

@@ -45,3 +45,7 @@ if (path === '/' || path.includes('index') || path === '') {
 } else if (path.includes('about')) {
     document.getElementById('about-link').classList.add('active');
 }
+//else highlight the home link
+else {
+    document.getElementById('home-link').classList.add('active');
+}

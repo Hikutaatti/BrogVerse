@@ -21,8 +21,7 @@ function openPage(pageName, elmnt, color) {
 
 
 
-// load the footer on all pages:
-fetch('footer.html')
+fetch('footer.html') //This line has fetch implemented, used to load the footer on all pages
 .then(response => response.text())
 .then(data => {
   document.getElementById('footer-placeholder').innerHTML = data;

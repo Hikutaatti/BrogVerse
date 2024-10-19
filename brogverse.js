@@ -28,28 +28,26 @@ fetch('footer.html') //This line has fetch implemented, used to load the footer 
 })
 .catch(error => console.error('Error loading footer:', error));
 
-// Reference to the form, popup, and close button
-const feedbackForm = document.getElementById('feedbackForm');
-const popup = document.getElementById('popup');
-const closePopup = document.getElementById('closePopup');
+// Load the top navigation on all pages
+fetch('topnav.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('topnav-placeholder').innerHTML = data;
 
-// Event listener for form submission
-feedbackForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
+    // Get the current page URL
+    const currentPage = window.location.pathname.split("/").pop();
 
-  // Show the popup
-  showPopup();
+    // Select all nav links
+    const navLinks = document.querySelectorAll('.topnav a');
 
-  // Reset the form after submission
-  feedbackForm.reset();
-});
-
-// Function to show the popup
-function showPopup() {
-  popup.style.display = 'block';
-}
-
-// Event listener to close the popup when clicking the "OK" button
-closePopup.addEventListener('click', function() {
-  popup.style.display = 'none'; // Hide the popup
-});
+    // Loop through each link and set the active class based on the current page
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  })
+  .catch(error => console.error('Error loading topnav:', error));

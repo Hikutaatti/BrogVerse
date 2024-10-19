@@ -28,22 +28,20 @@ fetch('footer.html') //This line has fetch implemented, used to load the footer 
 })
 .catch(error => console.error('Error loading footer:', error));
 
-// Load the top navigation on all pages
-    // Get the current page path
-    const path = window.location.pathname;
+const path = window.location.pathname;
 
-    // Clear any active classes
-    document.querySelectorAll('.topnav a').forEach(link => {
-        link.classList.remove('active');
-    });
+// Clear any active classes
+document.querySelectorAll('.topnav a').forEach(link => {
+    link.classList.remove('active');
+});
 
-    // Add the active class based on the current page
-    if (path.includes('index.html')) {
-        document.getElementById('home-link').classList.add('active');
-    } else if (path.includes('news.html')) {
-        document.getElementById('news-link').classList.add('active');
-    } else if (path.includes('review.html')) {
-        document.getElementById('review-link').classList.add('active');
-    } else if (path.includes('about.html')) {
-        document.getElementById('about-link').classList.add('active');
-    }
+// Check if the current page is the home page or if path is empty
+if (path === '/' || path.includes('index.html') || path === '') {
+    document.getElementById('home-link').classList.add('active');
+} else if (path.includes('news.html')) {
+    document.getElementById('news-link').classList.add('active');
+} else if (path.includes('review.html')) {
+    document.getElementById('review-link').classList.add('active');
+} else if (path.includes('about.html')) {
+    document.getElementById('about-link').classList.add('active');
+}

@@ -29,25 +29,21 @@ fetch('footer.html') //This line has fetch implemented, used to load the footer 
 .catch(error => console.error('Error loading footer:', error));
 
 // Load the top navigation on all pages
-fetch('topnav.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('topnav-placeholder').innerHTML = data;
+    // Get the current page path
+    const path = window.location.pathname;
 
-    // Get the current page URL
-    const currentPage = window.location.pathname.split("/").pop();
-
-    // Select all nav links
-    const navLinks = document.querySelectorAll('.topnav a');
-
-    // Loop through each link and set the active class based on the current page
-    navLinks.forEach(link => {
-      const linkPage = link.getAttribute('href');
-      if (linkPage === currentPage) {
-        link.classList.add('active');
-      } else {
+    // Clear any active classes
+    document.querySelectorAll('.topnav a').forEach(link => {
         link.classList.remove('active');
-      }
     });
-  })
-  .catch(error => console.error('Error loading topnav:', error));
+
+    // Add the active class based on the current page
+    if (path.includes('index.html')) {
+        document.getElementById('home-link').classList.add('active');
+    } else if (path.includes('news.html')) {
+        document.getElementById('news-link').classList.add('active');
+    } else if (path.includes('review.html')) {
+        document.getElementById('review-link').classList.add('active');
+    } else if (path.includes('about.html')) {
+        document.getElementById('about-link').classList.add('active');
+    }

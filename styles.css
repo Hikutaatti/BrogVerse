@@ -1,60 +1,169 @@
-/*advanced styling here*/
-
-h1
-{
-    color: #ca6f1e;
-    font-size: 24px;
-    text-align: center;
-}
-body
-{
-    background-color: lightgray;
+/* General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Align children vertically */
 }
 
-.button1 {  background-color: #6e2c00; /* Orange */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 30px; 
-    width: 60px;
-    height: 20px; 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightgray;
+  min-height: 100vh;
 }
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .topnav {
-    overflow: hidden;
-    background-color: #6e2c00;
-  }
-  
-  .topnav a {
-    float: left;
-    color: #f9e79f;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: #484241;
-  }
-  
-  .topnav a.active {
-    background-color: #484241;
-    color: orangered;
-  }
-  
-  .topnav-right {
-    float: right;
-  }
+/* Top Navigation Styles */
+.topnav {
+  overflow: hidden;
+  background-color: #6e2c00;
+}
+
+.topnav a {
+  float: left;
+  color: #f9e79f;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: #484241;
+}
+
+.topnav a.active {
+  background-color: #484241;
+  color: orangered;
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* Content Area */
+.content {
+  flex: 1; /* Makes this section flexible */
+  padding: 20px;
+  background-color: #f0f0f0; /* Change background color if needed */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+}
+
+/* Form Styles */
+form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="email"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Star Rating Styles */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2em;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-rating input:checked ~ label {
+  color: #ffca28;
+}
+
+.star-rating input:hover ~ label {
+  color: #ffca28;
+}
+
+/* Popup Modal Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+button#closePopup {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#closePopup:hover {
+  background-color: #45a049;
+}
+
+/* Average Rating Display */
+.average-rating {
+  text-align: center;
+  margin: 0px;
+  font-size: 1.5em;
+}
+
+.stars {
+  color: #ffca28;
+}

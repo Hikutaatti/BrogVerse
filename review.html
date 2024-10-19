@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>BrogVerse</title>
+    <link rel="icon" type="image/x-icon" href="/images/BrogSupport.png">
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html"><img src="/images/BrogSupport.png" height="15"></a>
+        <a href="news.html">Tiedotteet</a>
+        <a class="active" href="review.html">Arvostelu</a>
+        <div class="topnav-right"><a href="about.html">Meistä</a></div>
+    </div>
+
+    <div class="content"> <!-- Use a content class here -->
+        <!-- Feedback Form -->
+        <form id="feedbackForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="rating">Arvioi tuotteemme:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+            </div>
+            <label for="review">Arviosi:</label>
+            <textarea id="review" name="review" rows="4" placeholder="Kirjoita arviosi..." required></textarea>
+            <input type="submit" value="Submit Feedback">
+        </form>
+
+        <!-- Popup Modal -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>Arvio jätetty onnistuneesti!</p>
+                <button id="closePopup">OK</button>
+            </div>
+        </div>
+
+        <!-- Average star rating displayed below the menu -->
+        <div class="average-rating">
+            Yleinen arvio: <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> (4.3/5)
+        </div>
+    </div>
+<div id="footer-placeholder"></div>
+<script src="brogverse.js" defer></script>
+</body>
+</html>

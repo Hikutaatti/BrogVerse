@@ -7,9 +7,6 @@ const closePopup = document.getElementById('closePopup');
 feedbackForm.addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
 
-  // Show an alert
-  alert('Form submitted successfully!');
-
   // Show the popup
   showPopup();
 
